@@ -1,0 +1,405 @@
+@charset "utf-8";
+
+html { overflow-y: auto; }
+
+body {
+    background: #e6e6e6;
+    font-size: 15px;
+    margin: 0;
+}
+
+button {
+    background: rgba(255, 255, 255, 0.65);
+    color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+    font-size: 15px;
+    padding: 8px 13px;
+    transition: 0.3s;
+    &:hover {
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid #bfb;
+    }
+    &:active {
+        background: rgba(255, 255, 255, 0.9);
+    }
+}
+
+.topbar-brand {
+    background: url(../../img/logo/logo.svg) no-repeat;
+    height: 40px;
+    width: 60px;
+    margin-top: 18px;
+    > a {
+        display: block;
+        height: 40px;
+        width: 160px;
+        text-indent: -160px;
+        overflow: hidden;
+    }
+}
+
+.jsk-topbar-inverse {
+   background: rgba(65, 177, 70, 0.9);
+}
+
+.jsk-topbar-inverse .jsk-topbar-brand a {
+  color: #fff;
+}
+
+#switcher {
+    height: 39px;
+    padding: 8px 20px;
+    font-size: 16px;
+    line-height: 1.45857143;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(65, 177, 70, 0.9);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    color: #000;
+    width: 150px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+/*top-bar right*/
+#mode-menu {
+    z-index: 1001;
+    float: right;
+    background: black;
+    font-size: 14px;
+    width: 160px;
+    position: relative;
+}
+    #mode-button {
+        cursor: pointer;
+        padding: 11px 15px;
+        img { /*down arrow*/
+            position: absolute;
+            top: 18px;
+            right: 15px;
+            display: inline-block;
+        }
+    }
+
+    #other-modes {
+        position: absolute;
+        width: 160px;
+        background: black;
+        display: none;
+        a {
+            display: block;
+            padding: 8px 15px;
+        }
+    }
+
+#left-bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 40px;
+    background: black;
+    z-index: -1;
+}
+
+#right-bar {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 40px;
+    background: black;
+    z-index: -2;
+}
+
+#bottom-bar { /*overwrite common.css*/
+    position: fixed;
+    bottom: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    width: 100%;
+}
+
+#speed-control {
+    position: fixed;
+    left: 40px;
+    bottom: 15px;
+    color: black;
+    font-size: 15px;
+    line-height: 100%;
+
+    .ui-slider {
+        position: relative;
+        display: inline-block;
+        margin: -2px 10px;
+        border-radius: 1px;
+        border-left: 5px solid #BBB;
+        border-right: 5px solid #BBB;
+        background-color: #BBB;
+        height: 15px;
+        width: 70px;
+
+        &.ui-slider-handle {
+            position: absolute;
+            margin-left: -5px;
+            border: none;
+            outline: none;
+            background-color: #41B146;
+            height: 15px;
+            width: 10px;
+        }
+    }
+}
+
+[data-jsk-progress-slider] {
+    width: 700px;
+    margin-top: 10px;
+}
+
+#media-controls {
+    margin-left: 220px;
+    .media-control-button {
+        cursor: pointer;
+        position: fixed;
+        opacity: 0.75;
+        &:hover {
+            opacity: 1.0;
+        }
+        img {
+            display: inline-block;
+        }
+    }
+}
+/*  #forceEnd {
+        bottom: 10px;
+        left: 50%;
+        margin-left: -205px;
+    }
+    #forceNext {
+        bottom: 10px;
+        left: 50%;
+        margin-left: -237px;
+    }
+    #play {
+        bottom: 8px;
+        left: 50%;
+        margin-left: -273px;
+        opacity: 1.0;
+    }
+    #forcePrevious {
+        bottom: 10px;
+        left: 50%;
+        margin-left: -305px;
+    }
+    #forceBegin {
+        bottom: 10px;
+        left: 50%;
+        margin-left: -335px;
+    }*/
+    #progress-bar.ui-slider {
+        position: fixed;
+        bottom: 17px;
+        left: 50%;
+        margin-left: -175px;
+        background-color: #BBB;
+        border-radius: 1px;
+        height: 15px;
+        width: 350px;
+        opacity: 1.0;
+    }
+        #progress-bar .ui-slider-handle {
+            position: absolute;
+            border: none;
+            outline: none;
+            background-color: #fff;
+            height: 15px;
+            width: 3px;
+        }
+        #progress-bar .ui-slider-range {
+            position: absolute;
+            height: 15px;
+            background-color: #de3e1e;
+        }
+
+#draw {
+    display: none;
+    z-index: 2000;
+    position: absolute;
+    top: 100px;
+    background-color: white;
+}
+    #drawviz {
+        border: 1px solid black;
+        display: block;
+        cursor: crosshair;
+    }
+        .draw_line {
+            cursor: pointer;
+        }
+        .draw_curve {
+
+        }
+        .draw_circle {
+            cursor: pointer;
+        }
+        .draw_text {
+            cursor: pointer;
+        }
+
+#viz {
+    text-align: center;
+    overflow: hidden;
+    user-select: none;
+    padding: 5px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    svg {
+        float: left;
+        width: 1000px;
+        height: 600px;
+    }
+    .align-left {
+        text-align: left;
+    }
+}
+
+@media (min-width: 1500px) {
+    #viz svg {
+        float: left;
+        width: 1500px;
+        height: 600px;
+    }
+}
+
+.execAction { cursor: pointer; }
+    .execAction p:hover { background: black; color: white; }
+
+.panel {
+    border-radius: 2px;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+    color: white;
+    overflow: hidden;
+    background: rgba(109, 109, 109, 0.9);
+}
+.panel-hide { position: fixed; cursor: pointer; background: #AAA; }
+
+#current-action {
+    bottom: 320px;
+    right: 60px;
+    width: 400px;
+    display: none;
+    background: none;
+    overflow: normal;
+    white-space: normal;
+    text-align: right;
+    p { color: black; font-weight: bold; font-size: 20px; }
+}
+
+#actions {
+    bottom: 60px;
+    left: 43px;
+    p {
+        padding: 5px 10px;
+        cursor: pointer;
+        &:hover { background: black; color: white;}
+        &:first-of-type { padding-top: 10px; }
+        &:last-of-type { padding-bottom: 10px; }
+    }
+}
+#actions-hide {
+    bottom: 60px;
+    left: 0px;
+    padding-left: 14px;
+    padding-right: 15px;
+}
+.action-menu-pullout { display: none; position: fixed; }
+.action-menu-pullout input { background: black; color: white; }
+.new-menu-option { margin-left: 3px; }
+.err { color: red; margin-left: 6px; }
+
+
+pre, .CodeMirror pre {
+    font-family: Consolas, Menlo, "Courier New", Courier, monospace;
+    font-size: 17px;
+}
+#status {
+    font-size: 18px;
+    bottom: 277px;
+    right: 35px;
+    height: 50px;
+    white-space: normal;
+    padding: 9px 12px;
+}
+    #status-hide {
+        bottom: 255px;
+        right: 0px;
+        padding: 19px 14px 19px 15px;
+        transform: rotate(180deg);
+    }
+
+#editor {
+    pre {
+        padding: 1px 13px;
+        margin: 0px;
+        &:first-of-type { padding-top: 2px; }
+        &:last-of-type { padding-bottom: 2px; }
+    }
+}
+.CodeMirror pre.highlighted {
+    background: #BA2F14;
+    color: #fff;
+}
+#editor-hide {
+    bottom: 60px;
+    right: 0px;
+    padding: 88px 14px 88px 15px;
+    transform: rotate(180deg);
+}
+
+.rotateRight {
+    transform: rotate(180deg);
+    /* if you want to do this move with animate use transition */
+    transition: .5s;
+}
+.rotateLeft {
+    transform: rotate(0deg);
+    /* if you want to do this move with animate use transition */
+    transition: .5s;
+}
+
+/*tutorial stuff*/
+.tutorial-dialog {
+    position: fixed;
+    background: black;
+    color: white;
+    padding: 12px;
+    border-radius: 3px;
+    display: none;
+    line-height: 150%;
+    &:before {
+        content: " ";
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        border-style:solid;
+        border-width:10px;
+        border-color: transparent;
+    }
+}
+.tutorial-next {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    padding: 3px 8px;
+    background: #AAA;
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    img {
+        display: inline-block;
+        height: 9px;
+        margin-left: 8px;
+    }
+}

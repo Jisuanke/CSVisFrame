@@ -1,0 +1,9 @@
+node_modules/
+bower_components/
+build/js/
+build/css/*.css
+demo/build/js/
+.DS_Store
+drafts/
+deprecated/
+.idea/

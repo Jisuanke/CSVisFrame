@@ -1,0 +1,140 @@
+@orange: #ff8e00;
+@grey: #dcdcdc;
+@red: #de3e1e;
+@yellow: rgba(255, 203, 31, 0.95);
+@green: #41B146;
+@blue: #2996f3;
+@black: #333;
+
+@transition: 0.5s;
+
+.CodeMirror span.cm-error {
+	background: inherit !important;
+}
+g[data-va-name="vertex"] {
+	text {
+		font-weight: bold;
+	}
+}
+g[data-va-ns="rectex"] {
+	transition-property: all;
+}
+text {
+	font-size: 20px;
+	font-weight: bold;
+	text-anchor: middle;
+	fill: @black;
+	cursor: default;
+	transition-property: all;
+}
+g {
+	transition-property: fill, font-size, stroke, r, opacity;
+	transition: @transition;
+}
+g[data-va-ns="multibox"] {
+	> rect {
+		transition-property: fill, height, weight;
+		transition: 0.1s;
+	}
+	g[data-va-ns="rectex"] {
+		rect {
+			border: 1px solid #555;
+			border-radius: 2px;
+			transition-property: fill, border, opacity, height, width;
+			transition: @transition;
+		}
+	}
+}
+g.va-btree-edge path {
+	stroke: @blue;
+	stroke-width: 1;
+}
+g[data-va-ns] {
+	&[data-va-status="visited"] {
+		circle, rect { fill: @green; }
+		path { stroke: @green; }
+	}
+	&[data-va-status="visiting"] {
+		circle, rect { fill: @red; }
+		path { stroke: @red; }
+	}
+	&[data-va-status="flagged"] {
+		circle, rect { fill: @orange; }
+		path { stroke: @orange; }
+	}
+	&[data-va-status="ignored"] {
+		circle, rect { fill: @grey; }
+		path { stroke: @grey; }
+	}
+	&[data-va-status="blank"] {
+		circle, rect { fill: #f5f5f5; }
+		path { stroke: #F5F5F5; }
+	}
+	&[data-va-status="marked"] {
+		circle, rect { fill: @blue; }
+		path { stroke: @blue; }
+	}
+}
+.status(@name) {
+	&[data-va-status="visited"] {
+		@{name}: @green;
+	}
+	&[data-va-status="visiting"] {
+		@{name}: @red;
+	}
+	&[data-va-status="flagged"] {
+		@{name}: @orange;
+	}
+	&[data-va-status="ignored"] {
+		@{name}: @grey;
+	}
+	&[data-va-status="blank"] {
+		@{name}: #f5f5f5;
+	}
+	&[data-va-status="marked"] {
+		@{name}: @blue;
+	}
+}
+circle[data-va-ns="circle"] {
+	r: 18px;
+	&[r="0"] {
+		fill: transparent !important;
+		stroke: transparent !important;
+	}
+	transition: @transition;
+	transition-property: all;
+	filter: url('#drop-shadow');
+}
+path[data-va-ns="line"] {
+	stroke: #999;
+	stroke-width: 2.5;
+	stroke-dasharray: none;
+	.status(stroke);
+	transition-property: stroke, stroke-width;
+}
+path[data-va-ns="multibox-connector"] {
+  stroke: rgba(26, 165, 228, 0.78039);
+  stroke-width: 2;
+  stroke-dasharray: none;
+  transition-property: all;
+}
+rect[data-va-ns="rect"] {
+	.status(fill);
+	transition-property: all;
+}
+text[data-va-ns="weight"],
+text[data-va-ns="subscript"] {
+	font-size: 14px;
+}
+marker {
+	fill: #333;
+}
+.CodeMirror.cm-s-dracula span.cm-variable {
+	color: #f5f5f5;
+}
+
+a.jsk-va-zoom {
+	cursor: pointer;
+	font-family: Menlo, Consolas, Inconsolata, monospace;
+	font-weight: bold;
+}

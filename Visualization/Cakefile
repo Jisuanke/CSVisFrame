@@ -1,0 +1,9 @@
+task 'build', 'build development version (fast, big file)', (options) ->
+  require './rollup.js'
+
+task 'production', 'build production version (slow, small file)', (options) ->
+  require './scripts/create-algorithms'
+  require './scripts/rollup-production'
+
+task 'bump', 'updates bower.json/package.json version', (options) ->
+  require './scripts/prepublish'
