@@ -1,0 +1,2 @@
+task 'build', 'build development and production versions', (options) ->
+	require './scripts/rollup.coffee'

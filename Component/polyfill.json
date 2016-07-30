@@ -1,0 +1,6 @@
+[
+	"Array.prototype.includes",
+	"String.prototype.includes",
+	"String.prototype.startsWith",
+	"String.prototype.endsWith"
+]

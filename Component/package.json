@@ -1,0 +1,41 @@
+{
+  "name": "Component",
+  "version": "1.0.1",
+  "description": "SVG components for algorithm visualisation",
+  "main": "dist/index.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node -r \"coffee-script/register\" ./scripts/rollup.coffee",
+    "prepublish": "node -r \"coffee-script/register\" ./scripts/prepublish.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jisuanke/viz-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jisuanke/viz-components/issues"
+  },
+  "homepage": "https://github.com/Jisuanke/viz-components#readme",
+  "devDependencies": {
+    "acorn": "^3.0.4",
+    "babel-core": "^6.7.4",
+    "babel-plugin-transform-es2015-block-scoping": "^6.7.1",
+    "babel-plugin-transform-es2015-for-of": "^6.6.0",
+    "babel-plugin-transform-es2015-parameters": "^6.7.0",
+    "babel-plugin-transform-es2015-shorthand-properties": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "bowser": "^1.0.0",
+    "coffee-script": "^1.10.0",
+    "estree-walker": "^0.2.0",
+    "livescript": "^1.4.0",
+    "lodash-es": "^4.8.2",
+    "magic-string": "^0.10.2",
+    "rollup": "^0.25.8",
+    "rollup-plugin-babel": "^2.4.0",
+    "rollup-plugin-coffee-script": "^1.0.0",
+    "rollup-plugin-node-resolve": "^1.5.0",
+    "rollup-pluginutils": "^1.3.1",
+    "uglify-js": "^2.6.2"
+  }
+}
