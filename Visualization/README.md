@@ -42,7 +42,7 @@ The builder mentioned above automatically produces the following files:
 ### API
 
 ```coffeescript
-CSVisFrame = require 'CSVisFrame'
+CSVisFrame = require 'csvisframe'
 
 # Create a CodeMirror instance
 codemirror = CodeMirror.fromTextArea ...

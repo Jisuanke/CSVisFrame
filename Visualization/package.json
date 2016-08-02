@@ -1,8 +1,8 @@
 {
   "name": "CSVisFrame",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "jisuanke CSVisFrame",
-  "main": "build/CSVisFrame.js",
+  "main": "build/csvisframe.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node rollup.js production",
@@ -52,7 +52,7 @@
     "lodash": "^4.9.0",
     "lodash-es": "^4.9.0",
     "rollup": "^0.25.8",
-    "rollup-plugin-babel": "^2.4.0",
+    "rollup-plugin-babel": "2.4.0",
     "rollup-plugin-coffee-script": "^1.0.0",
     "rollup-plugin-commonjs": "^2.2.1",
     "rollup-plugin-node-resolve": "^1.5.0",

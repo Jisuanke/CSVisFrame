@@ -72,7 +72,7 @@ rollup(config).then (bundle) ->
     .code
 
 .then (code) ->
-    fs.writeFileSync './build/CSVisFrame.js', code
+    fs.writeFileSync './build/csvisframe.js', code
 .then ->
     console.log 'Success.'
 .catch (err) ->

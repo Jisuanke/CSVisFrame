@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/CSVisFrame.css">
+    <link rel="stylesheet" href="css/viz.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+</head>
+<body>
+    <div class="demo-row-top clearfix">
+        <div class="demo-row-top-form">
+            <div>
+                <input type="text">
+                <button>button</button>
+            </div>
+            <div>
+                <input type="text">
+                <button>button</button>
+            </div>
+        </div>
+        <div class="demo-player-container" id="player"></div>
+        <div class="demo-guide-container" id="guide"></div>
+    </div>
+    <div class="demo-row-bottom">
+        <div class="demo-svg-container" id="viz"></div>
+        <div class="demo-codetrace-container" id="codetrace"></div>
+    </div>
+
+    <div id="progress-bar"></div>
+    <script src="system.js"></script>
+    <script src="config.js"></script>
+    <script>
+		System.import(
+			'../build/css/suanshi.css',
+			'static/Inconsolata.css',
+
+			'jquery',
+			'codemirror',
+			'codemirror/csvisframe',
+			'build/routie',
+			'jisuanui',
+			'../build/css/viz.css',
+			'csvisframe'
+		);
+	</script>
+</body>
+</html>

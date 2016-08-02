@@ -17,7 +17,7 @@ module.exports =
             exclude: "#{top}/node_modules/**"
         aliasify
             constants: "#{lib}/constants.js"
-            components: "#{top}/../Component/dist/index.min.js"
+            components: "../Component/dist/index.min.js"
             util: "#{lib}/util.js"
             settings: "#{lib}/settings.js"
             lodash: "#{lib}/submodules/lodash.js"

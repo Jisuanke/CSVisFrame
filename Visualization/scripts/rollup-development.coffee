@@ -6,7 +6,7 @@ rollup(config).then (bundle) ->
     bundle.write
         format: 'umd'
         moduleName: 'CSVisFrame'
-        dest: './build/CSVisFrame.js'
+        dest: './build/csvisframe.js'
         indent: '\t'
         intro: 'var __DEV__ = true, global = window;'
 
