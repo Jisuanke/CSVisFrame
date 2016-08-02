@@ -1,49 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/CSVisFrame.css">
-    <link rel="stylesheet" href="css/viz.css">
-    <link rel="stylesheet" href="css/codemirror.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="favicon icon" href="static/favicon.ico">
+	<title>Algorithms</title>
+	<link rel="stylesheet" href="static/jsk-widget--f4bf47.css">
 </head>
-<body>
-    <div class="demo-row-top clearfix">
-        <div class="demo-row-top-form">
-            <div>
-                <input type="text">
-                <button>button</button>
-            </div>
-            <div>
-                <input type="text">
-                <button>button</button>
-            </div>
-        </div>
-        <div class="demo-player-container" id="player"></div>
-        <div class="demo-guide-container" id="guide"></div>
-    </div>
-    <div class="demo-row-bottom">
-        <div class="demo-svg-container" id="viz"></div>
-        <div class="demo-codetrace-container" id="codetrace"></div>
-    </div>
 
-    <div id="progress-bar"></div>
-    <script src="system.js"></script>
-    <script src="config.js"></script>
-    <script>
+<body class="jsk-with-topbar-fixed-top">
+	<header class="jsk-topbar jsk-topbar-inverse jsk-topbar-fixed-top">
+		<div class="jsk-container jsk-container-sm">
+			<h1 class="jsk-topbar-brand jsk-margin-right-lg topbar-brand">
+        <a href="#">Jisuanke</a>
+      </h1>
+			<div class="jsk-nav jsk-nav-pills jsk-topbar-nav jsk-show-md-up">
+				<div id="player"></div>
+			</div>
+		</div>
+	</header>
+
+	<div class="jsk-container jsk-container-sm">
+
+		<ol class="jsk-breadcrumb jsk-margin-vertical-sm">
+			<li><a id="jsk-lesson-back" href="">Visualisation</a></li>
+			<li></li>
+			<div class="jsk-dropdown" data-jsk-dropdown="{ maxHeight: '60%' }" id="jsk-dropdown">
+				<li class="jsk-active jsk-dropdown-toggle" style="cursor: pointer;">Suanshi<i class="jsk-icon jsk-icon-caret-down jsk-icon-fw"></i></li>
+				<div class="jsk-dropdown-content">
+					<div class="jsk-dropdown-radius-wrapper" style="max-height: 285.6px;">
+						<selector></selector>
+					</div>
+				</div>
+			</div>
+			<a class="jsk-fr jsk-link-muted" href="http://stackoverflow.com/questions/tagged/svg" target="_blank">FAQ</a>
+		</ol>
+
+		<div class="jsk-panel jsk-margin-top-0 jsk-margin-bottom-xl container">
+			<div class="jsk-panel-bd jsk-g jsk-padding-0 visualize-content">
+				<div class="jsk-u-lg-8">
+					<player-button algo=""></player-button>
+					<div id="viz" style="margin: 4px;"></div>
+				</div>
+				<div class="jsk-hide-sm jsk-u-md-5 jsk-u-lg-4 jsk-padding-0 rightbar">
+					<div id="guide" style="padding: 12px 10px; font-size: 17px;"></div>
+					<div id="codetrace"></div>
+					<style>
+						/* Demo only */
+
+						#codetrace .CodeMirror {
+							min-width: 350px;
+							border-radius: 2px;
+						}
+					</style>
+				</div>
+				<div id="zoom-tool"></div>
+			</div>
+			<div class="jsk-panel-footer jsk-g panel-footer">
+				<div class="jsk-padding-top-sm progress" style="height: 40px; width: 100%;">
+					<div id="progress-bar"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="system.js"></script>
+	<script src="config.js"></script>
+	<script>
 		System.import(
 			'../build/css/suanshi.css',
 			'static/Inconsolata.css',
 
 			'jquery',
 			'codemirror',
-			'codemirror/csvisframe',
+			'codemirror/suanshi',
 			'build/routie',
 			'jisuanui',
 			'../build/css/viz.css',
-			'csvisframe'
+			'suanshi'
 		);
 	</script>
+	<script src="build/js/index.js"></script>
 </body>
-</html>
