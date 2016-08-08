@@ -4,7 +4,7 @@ This is the source code of `CSVisFrame: A Framework for Interactive Visualizatio
 
 ## Online Page
 
-The demo page will come online in one week.
+The demo page will come online **as soon as possible**.
 
 ## Getting Started
 
